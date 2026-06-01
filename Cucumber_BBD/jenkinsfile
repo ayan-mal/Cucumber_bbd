@@ -12,7 +12,7 @@ stages {
     stage('Checkout') {
         steps {
             git branch: 'main',
-                url: 'https://github.com/ayan-mal/Cucumber_bbd/tree/main/Cucumber_BBD.git'
+                url: 'https://github.com/ayan-mal/Cucumber_bbd.git'
         }
     }
 
