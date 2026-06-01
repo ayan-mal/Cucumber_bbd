@@ -28,12 +28,10 @@ public class TutorialNinja_Hooks {
 
 	        EdgeOptions options = new EdgeOptions();
 
-	        options.addArguments("--headless=new");
+	        options.addArguments("--headless");
 	        options.addArguments("--disable-gpu");
 	        options.addArguments("--window-size=1920,1080");
-	        options.addArguments("--no-sandbox");
-	        options.addArguments("--disable-dev-shm-usage");
-	        options.addArguments("--user-data-dir=C:/Temp/EdgeProfile");
+	        options.addArguments("--remote-allow-origins=*");
 
 	        driver = new EdgeDriver(options);
 
