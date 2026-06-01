@@ -33,6 +33,7 @@ public class TutorialNinja_Hooks {
 	        options.addArguments("--window-size=1920,1080");
 	        options.addArguments("--no-sandbox");
 	        options.addArguments("--disable-dev-shm-usage");
+	        options.addArguments("--user-data-dir=C:/Temp/EdgeProfile");
 
 	        driver = new EdgeDriver(options);
 
