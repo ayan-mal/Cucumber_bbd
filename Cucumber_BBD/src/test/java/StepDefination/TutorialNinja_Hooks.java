@@ -4,17 +4,18 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.chrome.ChromeDriver;
+//import org.openqa.selenium.edge.EdgeDriver;
+//import org.openqa.selenium.edge.EdgeOptions;
 
 public class TutorialNinja_Hooks {
 	public static WebDriver driver;
 	//TutorialNinja_Hooks(WebDriver driver){
     //	this.driver=driver;
    // }
-/*  @Before // always execute before all test
+  @Before // always execute before all test
   public void setup() {
-	  driver = new EdgeDriver();
+	  driver = new ChromeDriver();
 	  driver.get("https://tutorialsninja.com/demo/");
   }
 
@@ -22,8 +23,8 @@ public class TutorialNinja_Hooks {
   public void close() {
 	  if(driver != null) {
         driver.quit();
-  }*/ //for cucumber run
-	@Before
+  } //for cucumber run
+	/*@Before
 	public void setup() {
 
 	    EdgeOptions options = new EdgeOptions();
@@ -43,7 +44,7 @@ public class TutorialNinja_Hooks {
 	    public void close() {
 	        if (driver != null) {
 	            driver.quit();
-	        }
+	        }*/
 	 
 }
 }
