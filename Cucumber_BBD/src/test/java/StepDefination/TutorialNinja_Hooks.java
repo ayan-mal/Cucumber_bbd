@@ -23,20 +23,21 @@ public class TutorialNinja_Hooks {
 	  if(driver != null) {
         driver.quit();
   }*/ //for cucumber run
-	    @Before
-	    public void setup() {
+	@Before
+	public void setup() {
 
-	        EdgeOptions options = new EdgeOptions();
+	    EdgeOptions options = new EdgeOptions();
 
-	        options.addArguments("--headless");
-	        options.addArguments("--disable-gpu");
-	        options.addArguments("--window-size=1920,1080");
-	        options.addArguments("--remote-allow-origins=*");
+	    options.addArguments("--headless");
+	    options.addArguments("--disable-gpu");
+	    options.addArguments("--window-size=1920,1080");
+	    options.addArguments("--remote-debugging-port=9222");
+	    options.addArguments("--remote-allow-origins=*");
 
-	        driver = new EdgeDriver(options);
+	    driver = new EdgeDriver(options);
 
-	        driver.get("https://tutorialsninja.com/demo/");
-	    }
+	    driver.get("https://tutorialsninja.com/demo/");
+	}
 
 	    @After
 	    public void close() {
