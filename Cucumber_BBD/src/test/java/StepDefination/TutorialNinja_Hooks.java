@@ -15,7 +15,7 @@ public class TutorialNinja_Hooks {
    // }
   @Before // always execute before all test
   public void setup() {
-	  driver = new ChromeDriver();
+	  driver = new ChromeDriver();//chromedriver working for jenkins that why i use here
 	  driver.get("https://tutorialsninja.com/demo/");
   }
 
