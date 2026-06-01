@@ -8,7 +8,7 @@ pipeline {
 
         maven 'Maven3'
 
-        jdk  'JDK'
+        jdk  'jdk21'
 
     }
 
