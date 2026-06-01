@@ -2,21 +2,13 @@
 pipeline {
 
     agent any
-
- 
-
     tools {
 
         maven 'Maven3'
+        jdk 'JDK'
 
     }
-
- 
-
     stages {
-
- 
-
         stage('Checkout') {
 
             steps {
@@ -28,9 +20,6 @@ pipeline {
             }
 
         }
-
- 
-
         stage('Build') {
 
             steps {
@@ -38,15 +27,9 @@ pipeline {
                 dir('Cucumber_bbd/Cucumber_BBD') {
 
                     bat 'mvn clean'
-
                 }
-
             }
-
         }
-
- 
-
         stage('Compile') {
 
             steps {
@@ -60,8 +43,6 @@ pipeline {
             }
 
         }
-
- 
 
         stage('Test') {
 
@@ -77,42 +58,25 @@ pipeline {
 
         }
 
- 
-
         stage('Package') {
-
             steps {
-
                 dir('Cucumber_bbd/Cucumber_BBD') {
 
                     bat 'mvn package'
-
                 }
-
             }
-
         }
-
     }
 
- 
-
     post {
-
         success {
-
             echo 'Build Successful'
-
         }
-
- 
 
         failure {
 
             echo 'Build Failed'
 
         }
-
     }
-
 }
