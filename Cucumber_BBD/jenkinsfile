@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/ayan-mal/Cucumber_bbd.git'
+                git branch: 'main', url: 'https://github.com/ayan-mal/Cucumber_bbd'
             }
         }
 
@@ -21,7 +21,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                dir('Cucumber_bbd/Cucumber_BBD') {
+                dir('Cucumber_BBD') {
                     bat 'mvn clean'
                 }
             }
@@ -31,7 +31,7 @@ pipeline {
 
         stage('Compile') {
             steps {
-                dir('Cucumber_bbd/Cucumber_BBD') {
+                dir('Cucumber_BBD') {
                     bat 'mvn compile'
                 }
             }
@@ -41,7 +41,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                dir('Cucumber_bbd/Cucumber_BBD') {
+                dir('Cucumber_BBD') {
                     bat 'mvn test'
                 }
             }
@@ -51,7 +51,7 @@ pipeline {
 
         stage('Package') {
             steps {
-                dir('Cucumber_bbd/Cucumber_BBD') {
+                dir('Cucumber_BBD') {
                     bat 'mvn package'
                 }
             }
