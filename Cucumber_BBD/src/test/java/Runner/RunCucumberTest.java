@@ -1,4 +1,4 @@
-package StepDefination;
+package Runner;
 
 import org.junit.runner.RunWith;
 
@@ -17,6 +17,6 @@ plugin = {
 }
 )
 
-public class TestRunner {
+public class RunCucumberTest {
 
 }

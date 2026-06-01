@@ -19,8 +19,9 @@ public class TutorialNinja_Hooks {
 
   @After // always executes after all test 
   public void close() {
-	  driver.close();
-	  
+	  if(driver != null) {
+        driver.quit();
   }
 
+}
 }
