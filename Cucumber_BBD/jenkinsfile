@@ -1,82 +1,71 @@
-
 pipeline {
-
     agent any
-    tools {
 
+ 
+
+    tools {
         maven 'Maven3'
         jdk 'jdk21'
-
     }
+
+ 
+
     stages {
         stage('Checkout') {
-
             steps {
-
-                git branch: 'main',
-
-                    url: 'https://github.com/ayan-mal/Cucumber_bbd.git'
-
+                git branch: 'main', url: 'https://github.com/ayan-mal/Cucumber_bbd.git'
             }
-
         }
+
+ 
+
         stage('Build') {
-
             steps {
-
                 dir('Cucumber_bbd/Cucumber_BBD') {
-
                     bat 'mvn clean'
                 }
             }
         }
+
+ 
+
         stage('Compile') {
-
             steps {
-
                 dir('Cucumber_bbd/Cucumber_BBD') {
-
                     bat 'mvn compile'
-
                 }
-
             }
-
         }
+
+ 
 
         stage('Test') {
-
             steps {
-
                 dir('Cucumber_bbd/Cucumber_BBD') {
-
                     bat 'mvn test'
-
                 }
-
             }
-
         }
+
+ 
 
         stage('Package') {
             steps {
                 dir('Cucumber_bbd/Cucumber_BBD') {
-
                     bat 'mvn package'
                 }
             }
         }
     }
 
+ 
+
     post {
         success {
             echo 'Build Successful'
         }
-
         failure {
-
             echo 'Build Failed'
-
         }
     }
 }
